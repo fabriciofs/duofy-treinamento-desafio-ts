@@ -9,7 +9,7 @@ Criar serviços TypeScript para controle de finanças pessoais:
 
 #### **Requisitos:**
 
-1. Entidades:
+**1. Entidades:**
 
  - Banco:
    - Id (string)
@@ -27,15 +27,7 @@ Criar serviços TypeScript para controle de finanças pessoais:
    - Id (string)
    - Nome (string)
 
-**1. CRUD:**
- - Criar um serviço CRUD genérico (CRUDService) com as operações básicas:
-   - create
-   - read
-   - update
-   - delete
- - Implementar serviços específicos para cada entidade (BancoService, MovimentacaoService, CategoriaService) que estendam CRUDService.
- 
-**3. Extrato Bancário:**
+**2. Extrato Bancário:**
 
  - Criar um serviço que gere o extrato de um banco por período:
    - Parâmetros:
@@ -46,7 +38,7 @@ Criar serviços TypeScript para controle de finanças pessoais:
    - Retorno:
      - Lista de movimentações do período com saldo acumulado.
 
-**4. Relatório de Despesas e Receitas:**
+**3. Relatório de Despesas e Receitas:**
 
  - Criar um serviço que gere um relatório de despesas e receitas por categoria e período:
    - Parâmetros:
@@ -55,13 +47,7 @@ Criar serviços TypeScript para controle de finanças pessoais:
   - Retorno:
      - Lista de categorias com total de despesas e receitas.
  
-**5. Tecnologias:**
-
- - Usar types, enums, interfaces, classes, herança de classes abstratas e generics para garantir robustez e tipagem do código.
- - Escrever testes unitários com Jest para garantir o funcionamento das funcionalidades.
- - Consumir APIs via JSON Server para simular a comunicação com um backend.
- 
- **6. Classe Abstrata CRUDService:**
+ **4. Classe Abstrata CRUDService:**
 
  - Criar uma classe abstrata CRUDService com as operações básicas de CRUD:
    - create
@@ -70,6 +56,13 @@ Criar serviços TypeScript para controle de finanças pessoais:
    - delete
  - Implementar métodos genéricos para manipulação de dados (ex: consulta por ID, listagem).
  - As classes de serviço específicas para cada entidade (BancoService, MovimentacaoService, CategoriaService) devem herdar de CRUDService.
+
+**5. Tecnologias:**
+
+ - Usar types, enums, interfaces, classes, herança de classes abstratas e generics para garantir robustez e tipagem do código.
+ - Escrever testes unitários com Jest para garantir o funcionamento das funcionalidades.
+ - Consumir APIs via JSON Server para simular a comunicação com um backend.
+ 
 
 #### Recursos Adicionais (Opcionais):
 
