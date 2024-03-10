@@ -14,7 +14,6 @@ Criar serviços TypeScript para controle de finanças pessoais:
  - Banco:
    - Id (string)
    - Nome (string)
-   - Tipo (enum: "receita", "despesa")
 
  - Movimentação:
    - Id (string)
@@ -26,6 +25,7 @@ Criar serviços TypeScript para controle de finanças pessoais:
  - Categoria:
    - Id (string)
    - Nome (string)
+   - Tipo (enum: "receita", "despesa")
 
 **2. Extrato Bancário:**
 
