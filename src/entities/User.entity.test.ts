@@ -1,17 +1,20 @@
-import { UserEntity } from "./User.entity";
+import { UserEntity } from "./User.entity"
 
 describe('User.entity.ts', () => {
-  let userEntity: UserEntity;
+  let user: UserEntity;
   beforeEach(() => {
-    userEntity = new UserEntity();
-  });
-  test('should be defined', () => {
-    expect(userEntity).toBeInstanceOf(UserEntity);
-  });
-  test('should have id', () => {
-    expect('id' in userEntity).toBeTruthy();
-  });
-  test('should have name', () => {
-    expect(userEntity.name).toEqual('');
-  });
-});
+    user = new UserEntity()
+  })
+  test('Should be defined', () => {
+    expect(user).toBeDefined()
+    expect(user).toBeInstanceOf(UserEntity)
+  })
+  test('Should have id', () => {
+    expect(user.id).toBeDefined()
+    expect(user.id).toBe('')
+  })
+  test('Should have name', () => {
+    expect(user.name).toBeDefined()
+    expect(user.name).toBe('')
+  })
+})

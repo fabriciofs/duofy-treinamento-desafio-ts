@@ -1,25 +1,22 @@
-import { BaseEntity } from "./Base.entity";
-import { CategoryEntity } from "./Category.entity";
-import { CategoryTypeEnum } from "./CategoryType.enum";
+import { CategoryEntity, CategoryType } from './Category.entity';
+import { DefaultEntity } from './Default.entity';
 
-describe('Category.entity.ts', () => {
-  let categoryEntity: CategoryEntity;
+describe('category.entity.ts', () => {
+  let category: CategoryEntity;
   beforeEach(() => {
-    categoryEntity = new CategoryEntity();
-  });
-  test('should be defined', () => {
-    expect(categoryEntity).toBeInstanceOf(BaseEntity);
-  });
-  test('should have id', () => {
-    expect('id' in categoryEntity).toBeTruthy();
-  });
-  test('should have name', () => {
-    expect(categoryEntity.name).toEqual('');
-  });
-  test('should have type', () => {
-    expect(categoryEntity.type).toEqual(CategoryTypeEnum.EXPENSE);
-  });
-  test('should have user', () => {
-    expect('user' in categoryEntity).toBeTruthy();
-  });
-});
+    category = new CategoryEntity()
+  })
+  test('Should be defined', () => {
+    expect(category).toBeDefined()
+    expect(category).toBeInstanceOf(CategoryEntity)
+    expect(category).toBeInstanceOf(DefaultEntity)
+  })
+  test('Should have name', () => {
+    expect(category.name).toBeDefined()
+    expect(category.name).toBe('')
+  })
+  test('Should have type', () => {
+    expect(category.type).toBeDefined()
+    expect(category.type).toBe(CategoryType.INCOME)
+  })
+})

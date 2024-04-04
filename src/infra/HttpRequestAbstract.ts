@@ -6,11 +6,7 @@ export abstract class HttpRequestAbstract<T> {
   }
 
   abstract get(url: string): Promise<T | T[]>;
-
-  abstract post(url: string, body: T): Promise<T>;
-
+  abstract post(url: any, body: T): Promise<T>;
   abstract put(url: string, body: Partial<T>): Promise<void>;
-
   abstract delete(url: string): Promise<void>;
-
 }

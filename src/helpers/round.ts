@@ -1,3 +1,3 @@
-export function round(value: number, decimals: number): number {
-  return Number(Math.round(Number(value + 'e' + decimals)) + 'e-' + decimals);
+export function round(num: number, decimal: number): number {
+  return Math.round(num * Math.pow(10, decimal)) / Math.pow(10, decimal);
 }

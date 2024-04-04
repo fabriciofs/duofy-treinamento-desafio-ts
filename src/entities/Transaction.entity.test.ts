@@ -1,38 +1,39 @@
 import { BankEntity } from "./Bank.entity";
-import { BaseEntity } from "./Base.entity";
 import { CategoryEntity } from "./Category.entity";
+import { DefaultEntity } from "./Default.entity";
 import { TransactionEntity } from "./Transaction.entity";
 
-describe('Transaction.entity.ts', () => {
-  let transactionEntity: TransactionEntity;
+describe('Bank.entity.ts', () => {
+  let transaction: TransactionEntity;
   let transactionDate = new Date();
   beforeEach(() => {
-    transactionEntity = new TransactionEntity();
-    transactionEntity.date = transactionDate;
-  });
-  test('should be defined', () => {
-    expect(transactionEntity).toBeInstanceOf(TransactionEntity);
-    expect(transactionEntity).toBeInstanceOf(BaseEntity);
-  });
-  test('should have id', () => {
-    expect('id' in transactionEntity).toBeTruthy();
-  });
-  test('should have date', () => {
-    expect(transactionEntity.date).toEqual(transactionDate);
-  });
-  test('should have amount', () => {
-    expect(transactionEntity.amount).toEqual(0);
-  });
-  test('should have description', () => {
-    expect(transactionEntity.description).toEqual('');
-  });
-  test('should have user', () => {
-    expect('user' in transactionEntity).toBeTruthy();
-  });
-  test('should have bank', () => {
-    expect(transactionEntity.bank).toBeInstanceOf(BankEntity);
-  });
-  test('should have category', () => {
-    expect(transactionEntity.category).toBeInstanceOf(CategoryEntity);
-  });
-});
+    transaction = new TransactionEntity()
+    transaction.date = transactionDate
+  })
+  test('Should be defined', () => {
+    expect(transaction).toBeDefined()
+    expect(transaction).toBeInstanceOf(TransactionEntity)
+    expect(transaction).toBeInstanceOf(DefaultEntity)
+  })
+  test('Should have date', () => {
+    expect(transaction.date).toBeDefined()
+    expect(transaction.date).toBe(transactionDate)
+  })
+  test('Should have description', () => {
+    expect(transaction.description).toBeDefined()
+    expect(transaction.description).toBe('')
+  })
+  test('Should have value', () => {
+    expect(transaction.value).toBeDefined()
+    expect(transaction.value).toBe(0)
+  })
+  test('Should have category', () => {
+    expect(transaction.category).toBeDefined()
+    expect(transaction.category).toBeInstanceOf(CategoryEntity)
+  })
+  test('Should have bank', () => {
+    expect(transaction.bank).toBeDefined()
+    expect(transaction.bank).toBeInstanceOf(BankEntity)
+  })
+
+})

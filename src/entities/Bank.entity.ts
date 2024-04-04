@@ -1,7 +1,5 @@
-import { UserEntity } from "./User.entity";
+import { DefaultEntity } from "./Default.entity";
 
-export class BankEntity {
-  id?: string = "";
+export class BankEntity extends DefaultEntity {
   name: string = "";
-  user: UserEntity = new UserEntity();
 }

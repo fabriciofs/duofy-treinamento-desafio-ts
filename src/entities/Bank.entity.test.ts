@@ -1,24 +1,19 @@
 import { BankEntity } from "./Bank.entity";
-import { UserEntity } from "./User.entity";
+import { DefaultEntity } from "./Default.entity";
 
 describe('Bank.entity.ts', () => {
-  let bankEntity: BankEntity;
+  let bank: BankEntity;
   beforeEach(() => {
-    bankEntity = new BankEntity();
-    bankEntity.id = '';
-    bankEntity.name = '';
-    bankEntity.user = new UserEntity();
-  });
-  test('should be defined', () => {
-    expect(bankEntity).toBeInstanceOf(BankEntity);
-  });
-  test('should have id', () => {
-    expect(bankEntity.id).toEqual('');
-  });
-  test('should have name', () => {
-    expect(bankEntity.name).toEqual('');
-  });
-  test('should have user', () => {
-    expect(bankEntity.user).toBeInstanceOf(UserEntity);
-  });
-});
+    bank = new BankEntity()
+  })
+  test('Should be defined', () => {
+    expect(bank).toBeDefined()
+    expect(bank).toBeInstanceOf(BankEntity)
+    expect(bank).toBeInstanceOf(DefaultEntity)
+  })
+  test('Should have name', () => {
+    expect(bank.name).toBeDefined()
+    expect(bank.name).toBe('')
+  })
+
+})

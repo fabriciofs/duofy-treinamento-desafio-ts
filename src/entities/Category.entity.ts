@@ -1,7 +1,11 @@
-import { BaseEntity } from "./Base.entity";
-import { CategoryTypeEnum } from "./CategoryType.enum";
+import { DefaultEntity } from "./Default.entity";
 
-export class CategoryEntity extends BaseEntity {
+export enum CategoryType {
+  INCOME = "Receita",
+  EXPENSE = "Despesa",
+}
+
+export class CategoryEntity extends DefaultEntity {
   name: string = "";
-  type: CategoryTypeEnum = CategoryTypeEnum.EXPENSE;
+  type: CategoryType = CategoryType.INCOME;
 }

@@ -1,11 +1,11 @@
 import { BankEntity } from "./Bank.entity";
-import { BaseEntity } from "./Base.entity";
 import { CategoryEntity } from "./Category.entity";
+import { DefaultEntity } from "./Default.entity";
 
-export class TransactionEntity extends BaseEntity {
+export class TransactionEntity extends DefaultEntity {
   date: Date = new Date();
-  amount: number = 0;
   description: string = "";
-  bank: BankEntity = new BankEntity();
+  value: number = 0;
   category: CategoryEntity = new CategoryEntity();
+  bank: BankEntity = new BankEntity();
 }
