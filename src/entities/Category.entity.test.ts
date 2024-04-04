@@ -1,21 +1,17 @@
+import { BaseEntity } from "./Base.entity";
 import { CategoryEntity } from "./Category.entity";
 import { CategoryTypeEnum } from "./CategoryType.enum";
-import { UserEntity } from "./User.entity";
 
 describe('Category.entity.ts', () => {
   let categoryEntity: CategoryEntity;
   beforeEach(() => {
     categoryEntity = new CategoryEntity();
-    categoryEntity.id = '';
-    categoryEntity.name = '';
-    categoryEntity.type = CategoryTypeEnum.EXPENSE;
-    categoryEntity.user = new UserEntity();
   });
   test('should be defined', () => {
-    expect(categoryEntity).toBeInstanceOf(CategoryEntity);
+    expect(categoryEntity).toBeInstanceOf(BaseEntity);
   });
   test('should have id', () => {
-    expect(categoryEntity.id).toEqual('');
+    expect('id' in categoryEntity).toBeTruthy();
   });
   test('should have name', () => {
     expect(categoryEntity.name).toEqual('');
@@ -24,6 +20,6 @@ describe('Category.entity.ts', () => {
     expect(categoryEntity.type).toEqual(CategoryTypeEnum.EXPENSE);
   });
   test('should have user', () => {
-    expect(categoryEntity.user).toBeInstanceOf(UserEntity);
+    expect('user' in categoryEntity).toBeTruthy();
   });
 });

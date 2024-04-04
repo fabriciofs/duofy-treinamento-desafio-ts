@@ -1,9 +1,7 @@
+import { BaseEntity } from "./Base.entity";
 import { CategoryTypeEnum } from "./CategoryType.enum";
-import { UserEntity } from "./User.entity";
 
-export class CategoryEntity {
-  id?: string = "";
+export class CategoryEntity extends BaseEntity {
   name: string = "";
   type: CategoryTypeEnum = CategoryTypeEnum.EXPENSE;
-  user: UserEntity = new UserEntity();
 }

@@ -1,26 +1,21 @@
 import { BankEntity } from "./Bank.entity";
+import { BaseEntity } from "./Base.entity";
 import { CategoryEntity } from "./Category.entity";
 import { TransactionEntity } from "./Transaction.entity";
-import { UserEntity } from "./User.entity";
 
 describe('Transaction.entity.ts', () => {
   let transactionEntity: TransactionEntity;
   let transactionDate = new Date();
   beforeEach(() => {
     transactionEntity = new TransactionEntity();
-    transactionEntity.id = '';
     transactionEntity.date = transactionDate;
-    transactionEntity.amount = 0;
-    transactionEntity.description = '';
-    transactionEntity.user = new UserEntity();
-    transactionEntity.bank = new BankEntity();
-    transactionEntity.category = new CategoryEntity();
   });
   test('should be defined', () => {
     expect(transactionEntity).toBeInstanceOf(TransactionEntity);
+    expect(transactionEntity).toBeInstanceOf(BaseEntity);
   });
   test('should have id', () => {
-    expect(transactionEntity.id).toEqual('');
+    expect('id' in transactionEntity).toBeTruthy();
   });
   test('should have date', () => {
     expect(transactionEntity.date).toEqual(transactionDate);
@@ -32,7 +27,7 @@ describe('Transaction.entity.ts', () => {
     expect(transactionEntity.description).toEqual('');
   });
   test('should have user', () => {
-    expect(transactionEntity.user).toBeInstanceOf(UserEntity);
+    expect('user' in transactionEntity).toBeTruthy();
   });
   test('should have bank', () => {
     expect(transactionEntity.bank).toBeInstanceOf(BankEntity);
